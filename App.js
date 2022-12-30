@@ -101,7 +101,7 @@ export default function App() {
       const resp_todos = await AsyncStorage.getItem("todos"); // todos 배열
       const resp_cat = await AsyncStorage.getItem("category"); // undefined / null
 
-      setTodos(JSON.parse(resp_todos));
+      setTodos(JSON.parse(resp_todos) ?? []);
       setCategory(resp_cat ?? "js");
     };
     getData();
